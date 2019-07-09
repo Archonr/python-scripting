@@ -8,11 +8,11 @@ import os
 import tarfile
 
 for exists in os.listdir('/tmp'):
-    if exists.startswith('core-gameserver'):
+    if exists.startswith('core-'):
     # Store configuration file values
-        time = time.strftime('%Y-%m-%d', time.gmtime(os.path.getmtime('/data/gameserver_logs')))
+        time = time.strftime('%Y-%m-%d', time.gmtime(os.path.getmtime('/data/logs')))
         with tarfile.open('core-dump.tar.gz', mode='w:gz') as tf:
-            logdir = ['/data/gameserver_logs', '/data/gameserver_logs/install', '/data/gameserver_logs/msg', '/data/gameserver_logs/site', '/data/gameserver_logs/wrn', '/data/gameserver_logs/db', '/data/gameserver_logs/debug', '/data/gameserver_logs/err']
+            logdir = ['/data/logs', '/data/logs/install', '/data/logs/msg', '/datalogs/site', '/data/logs/wrn', '/data/logs/db', '/data/logs/debug', '/data/ogs/err']
             for lgdir in logdir:
                 pathlog = lgdir
                 #print(pathlog)
@@ -22,7 +22,7 @@ for exists in os.listdir('/tmp'):
                         #print(pathlog + game)
                         tf.add(pathlog + '/' + game)
             for core in os.listdir('/tmp'):
-                if core.startswith('core-gameserver'):
+                if core.startswith('core-'):
                     tf.add('/tmp/' + core)
         tf.close()
 
@@ -65,7 +65,7 @@ for exists in os.listdir('/tmp'):
         server.quit()
         os.remove("core-dump.tar.gz")
         for corerm in os.listdir('/tmp'):
-            if corerm.startswith('core-gameserver'):
+            if corerm.startswith('core-'):
                 os.remove('/tmp/' + corerm)
 else:
     print("Not exist file")
