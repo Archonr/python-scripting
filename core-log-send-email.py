@@ -26,9 +26,9 @@ for exists in os.listdir('/tmp'):
                     tf.add('/tmp/' + core)
         tf.close()
 
-        email = 'phptest@pls.life'
-        password = 'ooLLueeE7rcv'
-        send_to_emails = ['v.korkach@pls.life', 'y.kosinskiy@pls.life', 'd.mosnenko@pls.life', 's.yarmak@pls.life', 's.lakhovets@pls.life'] # List of email addresses
+        email = 'asdadad'
+        password = 'oyyyy'
+        send_to_emails = [''xxxx'] # List of email addresses
         subject = 'This is core dump from gameserver'
         message = 'Archive in attachment'
         file_location = '/data/core-dump.tar.gz'
