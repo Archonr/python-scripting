@@ -19,8 +19,8 @@ if retcodeSite == 0:
 		response = requests.post(url + 'sendMessage', data=params)
 		return response
 
-	send_mess(348144968, 'OK: S-grain Site + Mail')
-	send_mess(201837960, 'OK: S-grain Site + Mail')
+	send_mess(348144968, 'OK: Site + Mail')
+	send_mess(201837960, 'OK: Site + Mail')
 
 else:
         url = "https://api.telegram.org/botid:AAHZL-ZwKxrkHnz2dswwhp4O2vn-8yiFqb8/"
@@ -37,5 +37,5 @@ else:
                 total_updates = len(results) - 1
                 return results[total_updates]
 
-        send_mess(348144968, 'FAIL: S-grain Site + Mail')
-        send_mess(201837960, 'FAIL: S-grain Site + Mail')
+        send_mess(348144968, 'FAIL: Site + Mail')
+        send_mess(201837960, 'FAIL: Site + Mail')
